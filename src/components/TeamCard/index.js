@@ -5,17 +5,15 @@ import './index.css'
 
 const TeamCard = props => {
   const {teamDetails} = props
-  const {id, teamImageUrl, name} = teamDetails
+  const {name, id, teamImageURL} = teamDetails
 
   return (
-    <Link to={`/team-matches/${id}`}>
-      <li key={id}>
-        <div className="item-container">
-          <img src={teamImageUrl} alt={`${name}`} />
-          <p>{name}</p>
-        </div>
-      </li>
-    </Link>
+    <li className="team-item">
+      <Link to={`/team-matches/${id}`} className="link">
+        <img src={teamImageURL} alt={name} className="team-logo" />
+        <p className="team-name">{name}</p>
+      </Link>
+    </li>
   )
 }
 
